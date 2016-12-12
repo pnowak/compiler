@@ -1,0 +1,27 @@
+{
+  "name": "compiler",
+  "version": "1.0.0",
+  "description": "compiler from canvas to svg (and vice-versa?)",
+  "main": "index.js",
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-cli": "^6.18.0",
+    "babel-core": "^6.18.0",
+    "babel-loader": "^6.2.5",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-latest": "^6.16.0",
+    "webpack": "^1.13.3",
+    "webpack-livereload-plugin": "^0.9.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pnowak/compiler"
+  },
+  "keywords": [
+    "compiler",
+    "canvas",
+    "svg"
+  ],
+  "author": "pnowak",
+  "license": "ISC"
+}
