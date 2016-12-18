@@ -7,7 +7,7 @@ export function parser(tokens) {
     let current = 0;
 
     while (current < tokens.length) {
-        let token = tokens[current]; console.log(current, token);
+        let token = tokens[current];
 
         if (token.type === 'number') {
             AST.body.push({
@@ -39,7 +39,10 @@ export function parser(tokens) {
             token = tokens[++current];
 
             while ((token.type !== 'paren') || (token.type === 'paren' && token.value !== ')')) {
-                node.params.push(token);
+                if (token.type === 'number') {
+                    node.params.push(token);
+                }
+
                 token = tokens[++current];
                 continue;
             }
