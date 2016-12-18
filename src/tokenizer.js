@@ -7,11 +7,11 @@ export function tokenizer(code) {
     const tokens = [];
 
     while (current < input.length) {
-
-        let char = input[current];
         const WHITESPACE = /\s/;
         const LETTERS = /[a-z]/i;
         const NUMBERS = /[0-9]/;
+
+        let char = input[current];
         
         if (char === '(') {
             tokens.push({
@@ -61,7 +61,7 @@ export function tokenizer(code) {
             }
 
             tokens.push({
-                type: 'name',
+                type: 'word',
                 value: value
             });
 
