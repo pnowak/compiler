@@ -19,9 +19,12 @@ export function transformer (ast) {
 
       switch (node.type) {
           case 'StringLiteral' :
-              svgAst.body.push({ 
-                  tag : node.value
-              });
+              if ((node.value !== 'ctx') && (node.value !== 'DOT')) {
+                  svgAst.body.push({
+                      tag : node.value
+                  });
+              }
+              current++;
               break;
           case 'CallExpression' :
               let params = node.params;
@@ -33,6 +36,7 @@ export function transformer (ast) {
                       height: params[3].value,
                   }
               });
+              current++;
               break;
           default:
             throw new TypeError(node.type);
